@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="zh-Hanf-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="stylesheet" href="css/all.cs">
+</head>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif
+    }
+
+    .bold {
+        font-size: 26px;
+        font-weight: bold
+    }
+
+    .carousel-item-hight {
+        height: 500px;
+    }
+
+    .h5 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .h1 {
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    .bg-cover {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .carousel-caption {
+        background-color: rgb(0, 0, 0, 0.6)
+    }
+
+    .dropdown-menu-right {
+        right: 0;
+        left: auto;
+    }
+
+    .box-shadow {
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .16)
+    }
+
+    .box-shadow:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, .24);
+        transition: box-shadow 0.3s;
+    }
+
+    .btn {
+        border-width: 1px
+    }
+
+    .by-roll {
+        width: 50px;
+        height: 50px;
+        border: 2px solid white;
+        background-color: #80797929;
+        border-radius: 50%;
+        box-shadow: 0px 0px 20px rgb(94, 90, 90)
+    }
+
+    .timeline-section {
+        position: relative;
+    }
+
+    .timeline-section:after {
+        content: "";
+        position: absolute;
+        height: 5px;
+        top: 22px;
+        left: 140px;
+        width: 225px;
+        transform: translateX(-50%);
+        background-color: #ccc;
+        z-index: -1;
+    }
+
+    .timeline-pointer {
+        position: relative;
+    }
+
+    .timeline-pointer::after {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid #ccc;
+        transform: translateX(-50%);
+        background-color: rgb(192, 178, 178);
+        box-shadow: 3px 4px 7px rgb(94, 90, 90);
+        z-index: -1;
+    }
+
+    .timeline-atk {
+        position: relative;
+    }
+
+    .timeline-atk::after {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: 50%;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 3px solid white;
+        transform: translateX(-50%);
+        background-color: rgb(87, 128, 240);
+        box-shadow: 3px 4px 7px rgb(94, 90, 90);
+        z-index: -1;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-light bg-light mb-5">
+        <a class="navbar-brand bold" href="#"><i class="fab fa-app-store mr-2 text-warning"></i>現煮西包軌</a>
+        <div class="dropdown">
+            <a class="navbar-brand btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-shopping-cart fa-2x" style="position: relative"><span class="px-2 py-1 rounded-circle"
+                        style="
+                            font-size: 2px;
+                            background-color: red;
+                            color: seashell;
+                            position: absolute;
+                            top:-5px;
+                            right:-5px;">5</span></i></a>
+            <div class="dropdown-menu dropdown-menu-right" style="min-width:384px">
+                <form class="px-4 py-3">
+                    <div class="form-group">
+                        <table class="table">
+                            <div class="table-header h5">
+                                已選擇餐點
+                            </div>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="btn btn-outline-danger border-0" data-toggle="modal"
+                                            data-target="#removeModal" data-title="殺人鯨套餐" data-price="$3,200"
+                                            data-backdrop="static"><i class="far fa-trash-alt fa-1x"></i></a></td>
+                                    <td>殺人鯨套餐</td>
+                                    <td>3人份</td>
+                                    <td>$3,200</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="btn btn-outline-danger border-0" data-toggle="modal"
+                                            data-target="#removeModal" data-title="翻車魚生魚片" data-price="$3,300"
+                                            data-backdrop="static"><i class="far fa-trash-alt fa-1x"></i></a></td>
+                                    <td>翻車魚生魚片</td>
+                                    <td>3人份</td>
+                                    <td>$3,300</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="btn btn-outline-danger border-0" data-toggle="modal"
+                                            data-target="#removeModal" data-title="龍蝦血酒" data-price="$6,000"
+                                            data-backdrop="static"><i class="far fa-trash-alt fa-1x"></i></a></td>
+                                    <td>龍蝦血酒</td>
+                                    <td>3人份</td>
+                                    <td>$6,000</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="btn btn-outline-danger border-0" data-toggle="modal"
+                                            data-target="#removeModal" data-title="干貝三吃" data-price="$5,700"
+                                            data-backdrop="static"><i class="far fa-trash-alt fa-1x"></i></a></td>
+                                    <td>干貝三吃</td>
+                                    <td>3人份</td>
+                                    <td>$5,700</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                    <tr>
+                                        <td><a href="#" class="btn btn-outline-danger border-0" data-toggle="modal"
+                                                data-target="#removeModal" data-title="土拓羹麵" data-price="$1,200"
+                                                data-backdrop="static"><i class="far fa-trash-alt fa-1x"></i></a></td>
+                                        <td>土拓羹麵</td>
+                                        <td>3人份</td>
+                                        <td>$1,200</td>
+                                    </tr>
+                                </tbody>
+                        </table>
+                        <a href="" class=" btn btn-primary btn-block">結帳去</a>
+                    </div>
+                </form>
+                <div class="dropdown-divider"></div>
+            </div>
+        </div>
+
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 d-flex justify-content-center mx-auto">
+                <div class=" d-flex " style="z-index: -2">
+                    <div class="d-flex flex-column mr-5 timeline-section">
+                        <div class=" mx-auto mb-3" style="z-index: 1">
+                            <div class="text-center  my-1 timeline-atk"
+                                style="font-size: 20px;color: rgb(255, 255, 255);z-index: 1;">1
+                            </div>
+                        </div>
+                        <div>訂單資料</div>
+                    </div>
+                    <div class="d-flex flex-column mr-5 ">
+                        <div class=" mx-auto mb-3">
+                            <div class="text-center  my-1 timeline-pointer"
+                                style="font-size: 20px;color: rgb(80, 72, 72)">2</div>
+                        </div>
+                        <div>金流付款</div>
+                    </div>
+                    <div class="d-flex flex-column ">
+                        <div class=" mx-auto mb-3">
+                            <div class="text-center  my-1 timeline-pointer"
+                                style="font-size: 20px;color: rgb(80, 72, 72)">3</div>
+                        </div>
+                        <div class="text-center">結帳完成</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mb-3">
+            <div class="col-md-8">
+                <div class="accordion mt-5" id="accordionExample">
+                    <div class="card">
+                        <div class="card-header d-flex" id="headingOne">
+                            <button class="btn btn-link mr-auto" type="button" data-toggle="collapse"
+                                data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <i class="fas fa-download mr-1"></i> 購物清單
+                            </button>
+                            <div class="align-self-cente">
+                                <span class="h5" style="font-size: 29px">NT$99,999</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="collapse " aria-labelledby="headingOne"
+                        data-parent="#accordionExample">
+                        <form class="px-4 py-3">
+                            <div class="form-group">
+                                <table class="table">
+                                    <tbody class="border-top-0">
+                                        <tr>
+                                            <td style="width: 20px"><a href="#"
+                                                    class="btn btn-outline-danger border-0"  data-toggle="modal"
+                                                    data-target="#removeModal" data-title="殺人鯨套餐" data-price="$3,200" data-backdrop="static"><i
+                                                        class="far fa-trash-alt fa-1x"></i></a></td>
+                                            <td style="width: 70px">
+                                                <div class="card">
+                                                    <div>
+                                                        <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E6%B7%B1%E6%B5%B7%E5%B7%A8%E6%BA%9D%E6%80%AA%E7%89%A9%E7%B4%9A%E8%9E%83%E8%9F%B9.jpg?raw=true" alt="" class=""
+                                                            style="width: 70px;height: 60px">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>殺人鯨套餐</td>
+                                            <td>3人份</td>
+                                            <td>$3,200</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#" class="btn btn-outline-danger border-0"  data-toggle="modal"
+                                                data-target="#removeModal" data-title="翻車魚生魚片" data-price="$3,300" data-backdrop="static"><i
+                                                        class="far fa-trash-alt fa-1x"></i></a></td>
+                                            <td>
+                                                <div class="card">
+                                                    <div>
+                                                        <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E8%9F%B9%E5%A0%A1%E8%A4%92.jpg?raw=true" alt="" class=""
+                                                            style="width: 70px;height: 60px">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>翻車魚生魚片</td>
+                                            <td>3人份</td>
+                                            <td>$3,300</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#" class="btn btn-outline-danger border-0"  data-toggle="modal"
+                                                data-target="#removeModal" data-title="龍蝦血酒" data-price="$6,000" data-backdrop="static"><i
+                                                        class="far fa-trash-alt fa-1x"></i></a></td>
+                                            <td>
+                                                <div class="card">
+                                                    <div>
+                                                        <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E8%B1%AA%E8%8F%AF%E6%B5%B7%E9%AE%AE%E5%A5%97%E9%A4%90.jpeg?raw=true" alt="" class=""
+                                                            style="width: 70px;height: 60px">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>龍蝦血酒</td>
+                                            <td>3人份</td>
+                                            <td>$6,000</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#" class="btn btn-outline-danger border-0"  data-toggle="modal"
+                                                data-target="#removeModal" data-title="干貝三吃" data-price="$5,700" data-backdrop="static"><i
+                                                        class="far fa-trash-alt fa-1x"></i></a></td>
+                                            <td>
+                                                <div class="card">
+                                                    <div>
+                                                        <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E8%B1%AA%E8%8F%AF%E8%92%B8%E9%BE%8D%E5%AE%B4.jpg?raw=true" alt="" class=""
+                                                            style="width: 70px;height: 60px">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>干貝三吃</td>
+                                            <td>3人份</td>
+                                            <td>$5,700</td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <tr>
+                                            <td><a href="#" class="btn btn-outline-danger border-0"  data-toggle="modal"
+                                                data-target="#removeModal" data-title="土拓羹麵" data-price="$1,200" data-backdrop="static"><i
+                                                        class="far fa-trash-alt fa-1x"></i></a></td>
+                                            <td>
+                                                <div class="card">
+                                                    <div>
+                                                        <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E5%B9%B3%E6%B0%91%E9%BE%8D%E8%9D%A6%E7%94%9F%E9%AD%9A%E7%89%87.jpg?raw=true" alt="" class=""
+                                                            style="width: 70px;height: 60px">
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>土拓羹麵</td>
+                                            <td>3人份</td>
+                                            <td>$1,200</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <form action="" class="needs-validation" novalidate>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">姓名</label>
+                            <input type="text" class="form-control" id="inputEmail4" placeholder="Name" required>
+                            <div class="invalid-feedback">
+                                你忘記我寫名子了
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="inputPassword4">Email</label>
+                            <input type="email" class="form-control" id="inputPassword4" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                要記得寫哦
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">國家</label>
+                            <select id="inputState" class="form-control" required>
+                                <option selected>台灣</option>
+                                <option>召喚峽谷</option>
+                                <option>全家?</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputState">城市</label>
+                            <select id="inputState" class="form-control" required>
+                                <option selected>蘭嶼</option>
+                                <option>金門</option>
+                                <option>媽祖</option>
+                                <option>澎湖</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="inputZip">郵遞區號</label>
+                            <input type="unmber" class="form-control" id="inputZip" required>
+                            <div class="invalid-feedback">
+                                你忘記我了
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">地址</label>
+                        <input type="text" class="form-control" id="inputAddress" placeholder="你家的地址哦" required>
+                        <div class="invalid-feedback">
+                            地址沒有填哦
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-secondary mr-2">繼續購物</button>
+                        <button type="submit" class="btn btn-primary">結帳去</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="p-5  bg-light ">
+        <div class="d-flex justify-content-center">
+            <p class="mr-3">© Copright 2019 現煮西包軌</p>
+            <a href="" class="mr-3"> Instagrame</a>
+            <a href="" class="mr-3"> Facebook</a>
+            <a href="">About</a>
+        </div>
+        <div class="text-center">
+            Made with Bootstrap4
+        </div>
+
+    </footer>
+    <!-- RemoveModal -->
+    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <tbody class="text-center">
+                            <tr>
+                                <th id="Name">品項</th>
+                                <th id="Quantity">份數</th>
+                                <th id="Prices">價錢</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-outline-danger">確認刪除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+        'use strict';
+        window.addEventListener('load', function () {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('needs-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (form.checkValidity() === false) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        }, false);
+    })();
+</script>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+
+        $('#removeModal').on('show.bs.modal', function (event) {
+            var btn = $(event.relatedTarget)
+            var recipient = btn.data('title')
+            var prices = btn.data('price')
+            var modal = $(this)
+            modal.find('.modal-title').text('確認刪除   ' + recipient)
+            modal.find('#Name').text(recipient)
+            modal.find('#Quantity').text("3人份")
+            modal.find('#Prices').text(prices)
+            console.log(prices)
+
+        })
+    });
+</script>
+
+</html>

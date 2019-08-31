@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="zh-Hanf-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+</head>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif
+    }
+
+    .bold {
+        font-size: 26px;
+        font-weight: bold
+    }
+
+    .carousel-item-hight {
+        height: 500px;
+    }
+
+    .h5 {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .h1 {
+        font-size: 50px;
+        font-weight: bold;
+    }
+
+    .bg-cover {
+        background-size: cover;
+        background-position: center center;
+    }
+
+    .carousel-caption {
+        background-color: rgb(0, 0, 0, 0.6)
+    }
+
+    .dropdown-menu-right {
+        right: 0;
+        left: auto;
+    }
+
+    .box-shadow {
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .16)
+    }
+
+    .box-shadow:hover {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, .24);
+        transition: box-shadow 0.3s;
+    }
+</style>
+
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand bold" href="#"><i class="fab fa-app-store mr-2 text-warning"></i>現煮西包軌</a>
+        <div class="dropdown">
+            <a class="navbar-brand btn  dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-shopping-cart fa-2x" style="position: relative"><span class="px-2 py-1 rounded-circle"
+                        style="
+                    font-size: 2px;
+                    background-color: red;
+                    color: seashell;
+                    position: absolute;
+                    top:-5px;
+                    right:-5px;">5</span></i></a>
+            <div class="dropdown-menu dropdown-menu-right" style="min-width:384px">
+                <form class="px-4 py-3">
+                    <div class="form-group">
+                        <table class="table">
+                            <div class="table-header h5">
+                                已選擇餐點
+                            </div>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="btn btn-outline-danger border-0" data-toggle="modal"
+                                            data-target="#removeModal" data-title="殺人鯨套餐" data-price="$3,200" data-backdrop="static"><i
+                                                class="far fa-trash-alt fa-1x"></i></a></td>
+                                    <td>殺人鯨套餐</td>
+                                    <td>3人份</td>
+                                    <td>$3,200</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="btn btn-outline-danger border-0" data-toggle="modal"
+                                            data-target="#removeModal" data-title="翻車魚生魚片" data-price="$3,300" data-backdrop="static"><i
+                                                class="far fa-trash-alt fa-1x"></i></a></td>
+                                    <td>翻車魚生魚片</td>
+                                    <td>3人份</td>
+                                    <td>$3,300</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="btn btn-outline-danger border-0" data-toggle="modal"
+                                            data-target="#removeModal" data-title="龍蝦血酒" data-price="$6,000" data-backdrop="static"><i
+                                                class="far fa-trash-alt fa-1x"></i></a></td>
+                                    <td>龍蝦血酒</td>
+                                    <td>3人份</td>
+                                    <td>$6,000</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="btn btn-outline-danger border-0" data-toggle="modal"
+                                            data-target="#removeModal" data-title="干貝三吃"  data-price="$5,700" data-backdrop="static"><i
+                                                class="far fa-trash-alt fa-1x"></i></a></td>
+                                    <td>干貝三吃</td>
+                                    <td>3人份</td>
+                                    <td>$5,700</td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <tr>
+                                    <td><a href="#" class="btn btn-outline-danger border-0" data-toggle="modal"
+                                            data-target="#removeModal" data-title="土拓羹麵" data-price="$1,200" data-backdrop="static"><i
+                                                class="far fa-trash-alt fa-1x"></i></a></td>
+                                    <td>土拓羹麵</td>
+                                    <td>3人份</td>
+                                    <td>$1,200</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="" class=" btn btn-primary btn-block">結帳去</a>
+                </form>
+                <div class="dropdown-divider"></div>
+            </div>
+        </div>
+
+    </nav>
+    <section class="mb-4">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item carousel-item-hight bg-cover active">
+                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E6%B5%B7%E7%94%A2%E5%9C%96-1.jpg?raw=true" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block px-5">
+                        <h1 class="h1">不要問你會怕之喝加</h1>
+                        <p>很多東西不嘗試，你永遠不知道到底什麼樣的食物才是好吃，你還就常是普囉大眾的食物麼?你還是想說哪裡的美食好吃麼?來吧近來吧，人間美味就此一間</p>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-item-hight bg-cover">
+                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E6%B5%B7%E7%94%A2%E5%9C%96-2.jpg?raw=true" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block px-5">
+                        <h1 class="h1">現補現殺</h1>
+                        <p>本店採預約制，須提前三天預定，因為我們是現補現殺的，你不說你要吃什麼，我們怎麼知道要抓什麼回來給你吃呢?建議各位水水們提前打電話來或網路上下單哦</p>
+                    </div>
+                </div>
+                <div class="carousel-item carousel-item-hight bg-cover">
+                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E6%B5%B7%E7%94%A2%E5%9C%96-3.jpg?raw=true" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block px-5">
+                        <h1 class="h1">人間美味，好吃到超乎想像</h1>
+                        <p>我們的魚都是當天從港口捕撈回來，絕無過流一說。魚蝦都只抓良品，也無小雞雞充數一說。漁民的辛苦，在加上廚師的辛苦。製造出一個超越想像的存在美食。在加上我們生魚片的刀，是跟中華一番雷恩借的冰刀生魚片肯定鮮拉
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="list-group sticky-top" id="myList" role="tablist">
+                    <a class="list-group-item list-group-item-action active" data-toggle="list" href="#all"
+                        role="tab"><i class="fas fa-align-justify mr-2"></i>所有商品</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#fish" role="tab"><i
+                            class="fas fa-fish mr-2"></i>魚類</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#shell" role="tab"><i
+                            class="fas fa-wind mr-2"></i>有殼類</a>
+                    <a class="list-group-item list-group-item-action" data-toggle="list" href="#pool" role="tab"><i
+                            class="fas fa-pray mr-2"></i>平民區</a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-6 mt-3 mt-md-0">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="Search for..."
+                                aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-success" type="button" id="button-addon2">快速搜尋</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="all" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E6%B7%B1%E6%B5%B7%E5%A4%A7%E7%99%BD%E9%AF%A7.jpg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">深海大白鯧</h5>
+                                        <p class="card-text ">一萬年后，冰化了。
+                                            斗羅聯邦科考隊在極北之地科考時發現了一個有著金銀雙色花紋的蛋，用儀器探察之后，發現里面居然有生命體征，趕忙將其帶回研究所進行孵化。蛋孵化出來了，可孵出來的卻是一個嬰兒，和人類一模一樣的嬰兒，一個蛋生的孩子。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary ">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E6%B7%B1%E6%B5%B7%E5%B7%A8%E6%BA%9D%E6%80%AA%E7%89%A9%E7%B4%9A%E8%9E%83%E8%9F%B9.jpg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">深海巨溝怪物級螃蟹</h5>
+                                        <p class="card-text">正在這時，藍軒宇腦海中傳來荊棘龍的意念，“尊主，您的伙伴除了實在不合適的之外，都選擇了屬于自己的伙伴。您看……”
+                                            藍軒宇沒好氣的道：“它們為什么都離我遠遠的？避瘟神嗎？
+                                            “不敢、不敢。”荊棘龍趕忙惶恐的道：“您的身份和血脈何等高貴，我們這等小獸哪有資格做您的伙伴。您要是需要</p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E8%8A%B1%E5%BC%8F%E8%9D%A6%E6%8B%BC%E7%9B%A4.jpg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">花式蝦拼盤</h5>
+                                        <p class="card-text">
+                                            東方神州，有人皇立道統，有圣賢宗門傳道，有諸侯雄踞一方王國，諸強林立，神州動亂千萬載，值此之時，一代天驕葉青帝及東凰大帝橫空出世，東方神州一統！然，葉青帝忽然暴斃，世間雕像盡皆被毀，于世間除名，淪為禁忌；從此神州唯東凰大帝獨尊！十五年后
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E8%9F%B9%E5%A0%A1%E8%A4%92.jpg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">蟹堡褒</h5>
+                                        <p class="card-text ">
+                                            “這家伙，竟然又在秦師姐的講堂上睡覺。”似乎這才注意到那熟睡的身姿，周圍許多少年都有些無語，顯然，這已經不是第一次了。以秦師姐的容貌和身材，哪怕是看著她也足以令人賞心悅目，那家伙腦子里究竟裝的什么。”
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E8%9F%B9%E6%A3%92%E7%9B%B8%E7%88%AD%E6%B5%B7%E8%9E%BA%E5%9C%A8%E5%BE%8C.jpg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">蟹棒相爭海螺在後</h5>
+                                        <p class="card-text ">
+                                            “好大。”葉伏天情不自禁的低語了一聲，他的聲音很輕，像是在自言自語，然而在此刻安靜的環境中，這聲音依舊顯得格外的突兀，只一瞬間，許多道目光凝固在了空氣中，隨即又化作憤怒。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E8%A5%BF%E9%83%A8%E5%A4%A7%E8%8D%89%E8%9D%A6.jpg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">西部大草蝦</h5>
+                                        <p class="card-text ">
+                                            “這厚顏無恥的家伙，混蛋。”一道道憤怒的目光像是化作利劍，使得葉伏天打了個冷顫，像是感覺不對勁，他的目光順著那誘人之地往上移動，隨后便看到了一張精致如玉卻滿是怒火的臉龐。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E8%B1%AA%E8%8F%AF%E6%B5%B7%E9%AE%AE%E5%A5%97%E9%A4%90.jpeg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">豪華海鮮套餐</h5>
+                                        <p class="card-text ">
+                                            很顯然，秦伊是要回避剛才的尷尬，轉移話題，但她此刻的怒火，葉伏天卻能夠清楚的感受到，他甚至隱隱感覺到從秦伊身上流動出一縷縷劍意，鋒利刺骨，刺痛著他的每一寸肌膚。
+                                            “三百年前，東凰大帝一統東方神州，下令天下諸侯創建武府學宮，興盛武道，青州學宮便是在此背景下創立。”葉伏天回應道，當然他所說的是正史記載，在家族中他所看到的野史中還有另一個名字存在，然而，那禁忌之名，卻決不允許被提及。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E8%B1%AA%E8%8F%AF%E8%92%B8%E9%BE%8D%E5%AE%B4.jpg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">豪華蒸龍宴</h5>
+                                        <p class="card-text ">
+                                            “當然不會遺漏？”少年的臉上露出一抹神圣的光輝：“神州公認的最強職業，得上天眷顧者，天命法師，擁有上蒼賜予的天賦，那些天賦罕見之人，如召喚師、馭獸師，星術師，絕大多數都出自天命法師，天命法師無論修行武法，都能比他人擁有更強的天資。”
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E9%B4%9B%E9%B4%A6%E6%B5%B7%E8%B7%AF%E9%9C%B8%E7%8E%8B%E5%90%83.jpg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">鴛鴦海路霸王吃</h5>
+                                        <p class="card-text ">周圍諸人都心馳神往，天命法師，傳奇職業，承天命，得上蒼眷顧。
+                                            “不僅如此，即便是最普通的天命法師，也天生適合武法兼修。”秦伊目露憧憬，隨后看向眼前的少年，又有些憤怒道：“沒想到你對此了解不少。”
+                                            “當然。”葉伏天看著秦伊，認真的道：“我就是一名天命法師。”
+                                            “噗……”不遠處一名正在喝水的少年猛的嗆到，劇烈的咳嗽著，周圍一雙雙目光望向葉伏天，像是看白癡般。</p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E5%8F%B0%E6%9D%B1%E5%B0%8F%E6%8D%B2.jpg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">台東小捲</h5>
+                                        <p class="card-text ">
+                                            葉伏天……”秦伊忽然間大聲喊道，美眸死死的盯著眼前少年，道：“三年前，你十二歲入學宮，那時我還是外門弟子，參觀你們天賦檢測，你對靈氣感知為天品，震驚學宮，許多師長關注，然而之后三年來，未有寸進，始終停留在覺醒第一重聚氣境，終日無所事事，懶惰不堪，在講堂上心不在焉，你究竟有沒有修行？如今，你又謊稱自己為天命法師，講堂入睡也以此為借口。”奇奇小說全網
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E5%A7%8A%E5%A6%B9%E7%94%9F%E9%AD%9A%E7%89%87.jpg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">姊妹生魚片</h5>
+                                        <p class="card-text ">
+                                            “三年了嗎。”葉伏天心中低語，沒想到不知不覺已經過去三年，而命宮中的家伙，還是一點沒有變化，而且他有些意外，向來冷漠的冰山性感女神秦師姐，原來竟一直關注著他，從當年他踏入學宮檢測出天品感知天賦就已經開始了。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E5%B8%83%E8%A2%8B%E6%8F%AAC%E5%A4%A7%E7%89%A1%E8%A0%A3.jpg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">布袋揪C大牡蠣</h5>
+                                        <p class="card-text ">
+                                            “學宮中已有決定，余生無需參加明年的春闈，可任意挑選學宮戰樓、騎士團，以及術法宮任意一宮修行，他的未來，不能再受你連累了。”秦伊看著葉伏天嘆息，他和余生兩人的命運，終將走向完全不同的方向。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="https://github.com/dxza9xz9/shopping/blob/master/img/%E5%B9%B3%E6%B0%91%E9%BE%8D%E8%9D%A6%E7%94%9F%E9%AD%9A%E7%89%87.jpg?raw=true" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">平民龍蝦生魚片</h5>
+                                        <p class="card-text">
+                                            “你身體孱弱，依舊還停留在覺醒第一重聚氣之境，即便參加秋闈大考，如何能過？”秦伊看著葉伏天，心中暗嘆，即便如今奮起，怕是依舊晚了。
+                                            “若是過了呢？”葉伏天似乎一點沒有自知之明，語氣中有著強大的自信。
+                                            “你若能過，以后講堂上你想做什么都行。”秦伊道。
+                                            葉伏天目光閃過一道異樣的光彩，看著眼前的倩影和火辣的身材，眼睛不由自主的看向了不該看的地方，弱弱的道：“想做什么都行嗎？”</p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="fish" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/深海大白鯧.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">深海大白鯧</h5>
+                                        <p class="card-text ">一萬年后，冰化了。
+                                            斗羅聯邦科考隊在極北之地科考時發現了一個有著金銀雙色花紋的蛋，用儀器探察之后，發現里面居然有生命體征，趕忙將其帶回研究所進行孵化。蛋孵化出來了，可孵出來的卻是一個嬰兒，和人類一模一樣的嬰兒，一個蛋生的孩子。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer border-top-0 bg-white">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary ">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/豪華海鮮套餐.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">豪華海鮮套餐</h5>
+                                        <p class="card-text ">
+                                            很顯然，秦伊是要回避剛才的尷尬，轉移話題，但她此刻的怒火，葉伏天卻能夠清楚的感受到，他甚至隱隱感覺到從秦伊身上流動出一縷縷劍意，鋒利刺骨，刺痛著他的每一寸肌膚。
+                                            “三百年前，東凰大帝一統東方神州，下令天下諸侯創建武府學宮，興盛武道，青州學宮便是在此背景下創立。”葉伏天回應道，當然他所說的是正史記載，在家族中他所看到的野史中還有另一個名字存在，然而，那禁忌之名，卻決不允許被提及。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/鴛鴦海路霸王吃.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">鴛鴦海路霸王吃</h5>
+                                        <p class="card-text ">周圍諸人都心馳神往，天命法師，傳奇職業，承天命，得上蒼眷顧。
+                                            “不僅如此，即便是最普通的天命法師，也天生適合武法兼修。”秦伊目露憧憬，隨后看向眼前的少年，又有些憤怒道：“沒想到你對此了解不少。”
+                                            “當然。”葉伏天看著秦伊，認真的道：“我就是一名天命法師。”
+                                            “噗……”不遠處一名正在喝水的少年猛的嗆到，劇烈的咳嗽著，周圍一雙雙目光望向葉伏天，像是看白癡般。</p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/姊妹生魚片.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">姊妹生魚片</h5>
+                                        <p class="card-text ">
+                                            “三年了嗎。”葉伏天心中低語，沒想到不知不覺已經過去三年，而命宮中的家伙，還是一點沒有變化，而且他有些意外，向來冷漠的冰山性感女神秦師姐，原來竟一直關注著他，從當年他踏入學宮檢測出天品感知天賦就已經開始了。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="tab-pane" id="shell" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/深海巨溝怪物級螃蟹.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">深海巨溝怪物級螃蟹</h5>
+                                        <p class="card-text">正在這時，藍軒宇腦海中傳來荊棘龍的意念，“尊主，您的伙伴除了實在不合適的之外，都選擇了屬于自己的伙伴。您看……”
+                                            藍軒宇沒好氣的道：“它們為什么都離我遠遠的？避瘟神嗎？
+                                            “不敢、不敢。”荊棘龍趕忙惶恐的道：“您的身份和血脈何等高貴，我們這等小獸哪有資格做您的伙伴。您要是需要</p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/花式蝦拼盤.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">花式蝦拼盤</h5>
+                                        <p class="card-text">
+                                            東方神州，有人皇立道統，有圣賢宗門傳道，有諸侯雄踞一方王國，諸強林立，神州動亂千萬載，值此之時，一代天驕葉青帝及東凰大帝橫空出世，東方神州一統！然，葉青帝忽然暴斃，世間雕像盡皆被毀，于世間除名，淪為禁忌；從此神州唯東凰大帝獨尊！十五年后
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/蟹堡褒.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">蟹堡褒</h5>
+                                        <p class="card-text ">
+                                            “這家伙，竟然又在秦師姐的講堂上睡覺。”似乎這才注意到那熟睡的身姿，周圍許多少年都有些無語，顯然，這已經不是第一次了。以秦師姐的容貌和身材，哪怕是看著她也足以令人賞心悅目，那家伙腦子里究竟裝的什么。”
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/蟹棒相爭海螺在後.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">蟹棒相爭海螺在後</h5>
+                                        <p class="card-text ">
+                                            “好大。”葉伏天情不自禁的低語了一聲，他的聲音很輕，像是在自言自語，然而在此刻安靜的環境中，這聲音依舊顯得格外的突兀，只一瞬間，許多道目光凝固在了空氣中，隨即又化作憤怒。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/西部大草蝦.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">西部大草蝦</h5>
+                                        <p class="card-text ">
+                                            “這厚顏無恥的家伙，混蛋。”一道道憤怒的目光像是化作利劍，使得葉伏天打了個冷顫，像是感覺不對勁，他的目光順著那誘人之地往上移動，隨后便看到了一張精致如玉卻滿是怒火的臉龐。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/豪華海鮮套餐.jpeg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">豪華海鮮套餐</h5>
+                                        <p class="card-text ">
+                                            很顯然，秦伊是要回避剛才的尷尬，轉移話題，但她此刻的怒火，葉伏天卻能夠清楚的感受到，他甚至隱隱感覺到從秦伊身上流動出一縷縷劍意，鋒利刺骨，刺痛著他的每一寸肌膚。
+                                            “三百年前，東凰大帝一統東方神州，下令天下諸侯創建武府學宮，興盛武道，青州學宮便是在此背景下創立。”葉伏天回應道，當然他所說的是正史記載，在家族中他所看到的野史中還有另一個名字存在，然而，那禁忌之名，卻決不允許被提及。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/豪華蒸龍宴.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">豪華蒸龍宴</h5>
+                                        <p class="card-text ">
+                                            “當然不會遺漏？”少年的臉上露出一抹神圣的光輝：“神州公認的最強職業，得上天眷顧者，天命法師，擁有上蒼賜予的天賦，那些天賦罕見之人，如召喚師、馭獸師，星術師，絕大多數都出自天命法師，天命法師無論修行武法，都能比他人擁有更強的天資。”
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/鴛鴦海路霸王吃.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">鴛鴦海路霸王吃</h5>
+                                        <p class="card-text ">周圍諸人都心馳神往，天命法師，傳奇職業，承天命，得上蒼眷顧。
+                                            “不僅如此，即便是最普通的天命法師，也天生適合武法兼修。”秦伊目露憧憬，隨后看向眼前的少年，又有些憤怒道：“沒想到你對此了解不少。”
+                                            “當然。”葉伏天看著秦伊，認真的道：“我就是一名天命法師。”
+                                            “噗……”不遠處一名正在喝水的少年猛的嗆到，劇烈的咳嗽著，周圍一雙雙目光望向葉伏天，像是看白癡般。</p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/布袋揪C大牡蠣.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">布袋揪C大牡蠣</h5>
+                                        <p class="card-text ">
+                                            “學宮中已有決定，余生無需參加明年的春闈，可任意挑選學宮戰樓、騎士團，以及術法宮任意一宮修行，他的未來，不能再受你連累了。”秦伊看著葉伏天嘆息，他和余生兩人的命運，終將走向完全不同的方向。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/平民龍蝦生魚片.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">平民龍蝦生魚片</h5>
+                                        <p class="card-text">
+                                            “你身體孱弱，依舊還停留在覺醒第一重聚氣之境，即便參加秋闈大考，如何能過？”秦伊看著葉伏天，心中暗嘆，即便如今奮起，怕是依舊晚了。
+                                            “若是過了呢？”葉伏天似乎一點沒有自知之明，語氣中有著強大的自信。
+                                            “你若能過，以后講堂上你想做什么都行。”秦伊道。
+                                            葉伏天目光閃過一道異樣的光彩，看著眼前的倩影和火辣的身材，眼睛不由自主的看向了不該看的地方，弱弱的道：“想做什么都行嗎？”</p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="pool" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/台東小捲.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">台東小捲</h5>
+                                        <p class="card-text ">
+                                            葉伏天……”秦伊忽然間大聲喊道，美眸死死的盯著眼前少年，道：“三年前，你十二歲入學宮，那時我還是外門弟子，參觀你們天賦檢測，你對靈氣感知為天品，震驚學宮，許多師長關注，然而之后三年來，未有寸進，始終停留在覺醒第一重聚氣境，終日無所事事，懶惰不堪，在講堂上心不在焉，你究竟有沒有修行？如今，你又謊稱自己為天命法師，講堂入睡也以此為借口。”奇奇小說全網
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/姊妹生魚片.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">姊妹生魚片</h5>
+                                        <p class="card-text ">
+                                            “三年了嗎。”葉伏天心中低語，沒想到不知不覺已經過去三年，而命宮中的家伙，還是一點沒有變化，而且他有些意外，向來冷漠的冰山性感女神秦師姐，原來竟一直關注著他，從當年他踏入學宮檢測出天品感知天賦就已經開始了。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/布袋揪C大牡蠣.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">布袋揪C大牡蠣</h5>
+                                        <p class="card-text ">
+                                            “學宮中已有決定，余生無需參加明年的春闈，可任意挑選學宮戰樓、騎士團，以及術法宮任意一宮修行，他的未來，不能再受你連累了。”秦伊看著葉伏天嘆息，他和余生兩人的命運，終將走向完全不同的方向。
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <div class="card text-center h-100 border-0 box-shadow">
+                                    <img src="img/平民龍蝦生魚片.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title h5">平民龍蝦生魚片</h5>
+                                        <p class="card-text">
+                                            “你身體孱弱，依舊還停留在覺醒第一重聚氣之境，即便參加秋闈大考，如何能過？”秦伊看著葉伏天，心中暗嘆，即便如今奮起，怕是依舊晚了。
+                                            “若是過了呢？”葉伏天似乎一點沒有自知之明，語氣中有著強大的自信。
+                                            “你若能過，以后講堂上你想做什么都行。”秦伊道。
+                                            葉伏天目光閃過一道異樣的光彩，看著眼前的倩影和火辣的身材，眼睛不由自主的看向了不該看的地方，弱弱的道：“想做什么都行嗎？”</p>
+                                    </div>
+                                    <div class="card-footer bg-white border-top-0">
+                                        <select class="form-control form-control-sm mb-2">
+                                            <option>1人份</option>
+                                            <option>3人份</option>
+                                            <option>5人份</option>
+                                            <option>10人份</option>
+                                        </select>
+                                        <a href="#" class="btn btn-primary">了解一下</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- RemoveModal -->
+    <div class="modal fade" id="removeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header bg-danger text-white">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <tbody class="text-center">
+                            <tr>
+                                <th id="Name">品項</th>
+                                <th id="Quantity">份數</th>
+                                <th id="Prices">價錢</th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-outline-danger">確認刪除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+</body>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+
+        $('#removeModal').on('show.bs.modal', function (event) {
+            var btn = $(event.relatedTarget)
+            var recipient = btn.data('title')
+            var prices = btn.data('price')
+            var modal = $(this)
+            modal.find('.modal-title').text('確認刪除   ' + recipient)
+            modal.find('#Name').text( recipient)
+            modal.find('#Quantity').text("3人份")
+            modal.find('#Prices').text( prices)
+            console.log(prices)
+            
+        })
+    });
+</script>
+
+</html>
